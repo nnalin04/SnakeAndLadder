@@ -13,9 +13,18 @@ class SnakeAndLadder {
         // calling a function to set the starting position as 0.
         settingStartingPositions(playersPositions);
 
-        //calling a function to roll the die.
+        // calling a function to roll the die.
         int rolledDie = rollTheDie();
-        System.out.println(rolledDie);
+
+        int moveType = typeOfMove();
+
+        if (moveType == 1) {
+            System.out.println("player stayed in the same position");
+        } else if (moveType == 2) {
+            System.out.println("it's ladder so player moves " + rolledDie + " steps forward");
+        } else {
+            System.out.println("it's snake so player moves " + rolledDie + " steps backward");
+        }
     }
 
     // function to set players starting position as zero.
@@ -28,6 +37,11 @@ class SnakeAndLadder {
 
     public static int rollTheDie() {
         Random r = new Random();
-        return r.nextInt(6)+1;
+        return r.nextInt(6) + 1;
+    }
+
+    public static int typeOfMove() {
+        Random r = new Random();
+        return r.nextInt(3) + 1;
     }
 }
