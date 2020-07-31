@@ -15,19 +15,31 @@ class SnakeAndLadder {
 
         int bestPlacedPosition = 0;
 
+        int numOfRounds = 0;
+
         while (bestPlacedPosition < 100) {
+            numOfRounds++;
 
             // calling a function to move positions.
             playingARound(playersPositions);
+            // displaying players current position
+            currentPositions(playersPositions, numOfRounds);
 
             for (int i = 0; i < playersPositions.length; i++) {
                 if (bestPlacedPosition < playersPositions[i]) {
                     bestPlacedPosition = playersPositions[i];
                 }
             }
-            System.out.println(bestPlacedPosition);
         }
 
+    }
+
+    public static void currentPositions(int[] playersPositions, int numOfRounds) {
+        for (int i = 0; i < playersPositions.length; i++) {
+            System.out.println("player" + (i + 1) + " after " + numOfRounds + " dice played the current position is: "
+                    + playersPositions[i]);
+        }
+        System.out.println();
     }
 
     public static int[] playingARound(int[] playersPositions) {
@@ -35,7 +47,7 @@ class SnakeAndLadder {
         for (int i = 0; i < playersPositions.length; i++) {
             currentPosition = playersPositions[i];
             playersPositions[i] = movingPosition(playersPositions[i]);
-            if(playersPositions[i] > 100){
+            if (playersPositions[i] > 100) {
                 playersPositions[i] = currentPosition;
             }
             if (playersPositions[i] < 0) {
