@@ -3,7 +3,7 @@ import java.util.Random;
 class SnakeAndLadder {
 
     public static void main(String[] args) {
-        playingAGame(1);
+        playingAGame(2);
     }
 
     public static void playingAGame(int numOfPlayers) {
@@ -32,6 +32,18 @@ class SnakeAndLadder {
             }
         }
 
+        playerWhoWon(playersPositions);
+
+    }
+
+    public static void playerWhoWon(int[] playersPositions) {
+        int champion = 1;
+        int championPosition = playersPositions[0];
+        for (int i = 0; i < playersPositions.length; i++) {
+            if (championPosition < playersPositions[i])
+                champion = i + 1;
+        }
+        System.out.println("player" + champion + " WON THE GAME");
     }
 
     public static void currentPositions(int[] playersPositions, int numOfRounds) {
@@ -84,6 +96,7 @@ class SnakeAndLadder {
 
         if (moveType == 1) {
             playerPosition += rolledDie;
+            movingPosition(playerPosition);
         } else if (moveType == 2) {
             playerPosition -= rolledDie;
         }
