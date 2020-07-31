@@ -31,8 +31,13 @@ class SnakeAndLadder {
     }
 
     public static int[] playingARound(int[] playersPositions) {
+        int currentPosition = 0;
         for (int i = 0; i < playersPositions.length; i++) {
+            currentPosition = playersPositions[i];
             playersPositions[i] = movingPosition(playersPositions[i]);
+            if(playersPositions[i] > 100){
+                playersPositions[i] = currentPosition;
+            }
             if (playersPositions[i] < 0) {
                 playersPositions[i] = 0;
             }
