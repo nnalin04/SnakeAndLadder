@@ -1,0 +1,3 @@
+# ignoring the java class file and text files.
+*.class
+*.txt
