@@ -1,4 +1,7 @@
+import java.util.Random;
+
 class SnakeAndLadder {
+
     public static void main(String[] args) {
         playingARound(3);
     }
@@ -10,15 +13,9 @@ class SnakeAndLadder {
         // calling a function to set the starting position as 0.
         settingStartingPositions(playersPositions);
 
-        // displaying players current position
-        currentPositions(playersPositions);
-
-    }
-
-    public static void currentPositions(int[] playersPositions) {
-        for (int i = 0; i < playersPositions.length; i++) {
-            System.out.println("player" + (i + 1) + " current position is: " + playersPositions[i]);
-        }
+        //calling a function to roll the die.
+        int rolledDie = rollTheDie();
+        System.out.println(rolledDie);
     }
 
     // function to set players starting position as zero.
@@ -27,5 +24,10 @@ class SnakeAndLadder {
             playersPositions[i] = 0;
         }
         return playersPositions;
+    }
+
+    public static int rollTheDie() {
+        Random r = new Random();
+        return r.nextInt(6)+1;
     }
 }
