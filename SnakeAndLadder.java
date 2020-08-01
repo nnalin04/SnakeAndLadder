@@ -80,7 +80,7 @@ class SnakeAndLadder {
         return r.nextInt(3) + 1;
     }
 
-    //function ot decide the type of move.
+    // function ot decide the type of move.
     public static int movingPosition(int playerPosition) {
         int rolledDie = rollTheDie();
 
@@ -88,6 +88,7 @@ class SnakeAndLadder {
 
         if (moveType == 1) {
             playerPosition += rolledDie;
+            movingPosition(playerPosition);
         } else if (moveType == 2) {
             playerPosition -= rolledDie;
         }
