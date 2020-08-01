@@ -6,8 +6,8 @@ class SnakeAndLadder {
         playingAGame(2);
     }
 
+    // function to play the game.
     public static void playingAGame(int numOfPlayers) {
-
         int[] playersPositions = new int[numOfPlayers];
 
         // calling a function to set the starting position as 0.
@@ -54,8 +54,14 @@ class SnakeAndLadder {
         System.out.println();
     }
 
+    <<<<<<<HEAD
+
     public static int[] playingARound(int[] playersPositions) {
         int currentPosition = 0;
+=======
+    // function to print the player current position.
+    public static void currentPositions(int[] playersPositions) {
+>>>>>>> UC1
         for (int i = 0; i < playersPositions.length; i++) {
             currentPosition = playersPositions[i];
             playersPositions[i] = movingPosition(playersPositions[i]);
