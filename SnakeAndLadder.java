@@ -3,7 +3,7 @@ import java.util.Random;
 class SnakeAndLadder {
 
     public static void main(String[] args) {
-        playingARound(3);
+        playingARound(1);
     }
 
     //function to decide the players moving position.
