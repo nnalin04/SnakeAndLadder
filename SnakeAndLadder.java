@@ -15,6 +15,7 @@ class SnakeAndLadder {
 
     }
 
+    // function to print the player current position.
     public static void currentPositions(int[] playersPositions) {
         for (int i = 0; i < playersPositions.length; i++) {
             System.out.println("player" + (i + 1) + " current position is: " + playersPositions[i]);
