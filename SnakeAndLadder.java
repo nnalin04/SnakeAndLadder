@@ -6,6 +6,7 @@ class SnakeAndLadder {
         playingAGame(1);
     }
 
+    //function to start and play the game.
     public static void playingAGame(int numOfPlayers) {
 
         int[] playersPositions = new int[numOfPlayers];
@@ -30,6 +31,7 @@ class SnakeAndLadder {
 
     }
 
+    //function to decide the players moving position.
     public static int[] playingARound(int[] playersPositions) {
         for (int i = 0; i < playersPositions.length; i++) {
             playersPositions[i] = movingPosition(playersPositions[i]);
@@ -60,6 +62,7 @@ class SnakeAndLadder {
         return r.nextInt(3) + 1;
     }
 
+    //function ot decide the type of move.
     public static int movingPosition(int playerPosition) {
         int rolledDie = rollTheDie();
 
