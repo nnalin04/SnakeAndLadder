@@ -3,9 +3,10 @@ import java.util.Random;
 class SnakeAndLadder {
 
     public static void main(String[] args) {
-        playingAGame(2);
+        playingAGame(1);
     }
 
+    //function to start and play the game.
     public static void playingAGame(int numOfPlayers) {
 
         int[] playersPositions = new int[numOfPlayers];
@@ -32,20 +33,9 @@ class SnakeAndLadder {
             }
         }
 
-        playerWhoWon(playersPositions);
-
     }
 
-    public static void playerWhoWon(int[] playersPositions) {
-        int champion = 1;
-        int championPosition = playersPositions[0];
-        for (int i = 0; i < playersPositions.length; i++) {
-            if (championPosition < playersPositions[i])
-                champion = i + 1;
-        }
-        System.out.println("player" + champion + " WON THE GAME");
-    }
-
+    //function to print the current position of the player.
     public static void currentPositions(int[] playersPositions, int numOfRounds) {
         for (int i = 0; i < playersPositions.length; i++) {
             System.out.println("player" + (i + 1) + " after " + numOfRounds + " dice played the current position is: "
@@ -54,6 +44,7 @@ class SnakeAndLadder {
         System.out.println();
     }
 
+    //function to decide the players moving position.
     public static int[] playingARound(int[] playersPositions) {
         int currentPosition = 0;
         for (int i = 0; i < playersPositions.length; i++) {
@@ -89,6 +80,7 @@ class SnakeAndLadder {
         return r.nextInt(3) + 1;
     }
 
+    //function ot decide the type of move.
     public static int movingPosition(int playerPosition) {
         int rolledDie = rollTheDie();
 
@@ -96,7 +88,6 @@ class SnakeAndLadder {
 
         if (moveType == 1) {
             playerPosition += rolledDie;
-            movingPosition(playerPosition);
         } else if (moveType == 2) {
             playerPosition -= rolledDie;
         }
