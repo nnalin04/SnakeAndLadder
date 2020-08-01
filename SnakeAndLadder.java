@@ -3,7 +3,7 @@ import java.util.Random;
 class SnakeAndLadder {
 
     public static void main(String[] args) {
-        playingARound(3);
+        playingARound(1);
     }
 
     // function to play the game.
@@ -15,8 +15,7 @@ class SnakeAndLadder {
         settingStartingPositions(playersPositions);
 
         // calling a function to roll the die.
-        int rolledDie = rollTheDie();
-        System.out.println(rolledDie);
+        rollTheDie();
     }
 
     // function to set players starting position as zero.
