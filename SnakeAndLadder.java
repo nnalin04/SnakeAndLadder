@@ -26,7 +26,6 @@ class SnakeAndLadder {
                     bestPlacedPosition = playersPositions[i];
                 }
             }
-            System.out.println(bestPlacedPosition);
         }
 
     }
