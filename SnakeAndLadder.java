@@ -6,6 +6,7 @@ class SnakeAndLadder {
         playingARound(3);
     }
 
+    //function to decide the players moving position.
     public static void playingARound(int numOfPlayers) {
 
         int[] playersPositions = new int[numOfPlayers];
@@ -35,11 +36,13 @@ class SnakeAndLadder {
         return playersPositions;
     }
 
+    // function to get an output after the die is rolled.
     public static int rollTheDie() {
         Random r = new Random();
         return r.nextInt(6) + 1;
     }
 
+    //function to decide the type of move.
     public static int typeOfMove() {
         Random r = new Random();
         return r.nextInt(3) + 1;
