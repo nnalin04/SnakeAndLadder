@@ -3,6 +3,7 @@ class SnakeAndLadder {
         playingARound(3);
     }
 
+    //function to play the game.
     public static void playingARound(int numOfPlayers) {
 
         int[] playersPositions = new int[numOfPlayers];
