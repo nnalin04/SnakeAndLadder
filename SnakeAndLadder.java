@@ -6,6 +6,7 @@ class SnakeAndLadder {
         playingARound(3);
     }
 
+    // function to play the game.
     public static void playingARound(int numOfPlayers) {
 
         int[] playersPositions = new int[numOfPlayers];
@@ -13,7 +14,7 @@ class SnakeAndLadder {
         // calling a function to set the starting position as 0.
         settingStartingPositions(playersPositions);
 
-        //calling a function to roll the die.
+        // calling a function to roll the die.
         int rolledDie = rollTheDie();
         System.out.println(rolledDie);
     }
@@ -26,8 +27,9 @@ class SnakeAndLadder {
         return playersPositions;
     }
 
+    // function to decide the die toss
     public static int rollTheDie() {
         Random r = new Random();
-        return r.nextInt(6)+1;
+        return r.nextInt(6) + 1;
     }
 }
